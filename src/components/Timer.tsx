@@ -14,7 +14,7 @@ const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
 
   useEffect(() => {
     startTimer();
-  }, [currentPlayer]);
+  }, [currentPlayer, restart]);
 
   const startTimer = () => {
     if (timer.current) {
@@ -27,6 +27,19 @@ const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
       1000
     );
   };
+
+  useEffect(() => {
+    if (blackTime === 0 || whiteTime === 0) {
+      alert(
+        `Время закончилось! Победили ${
+          currentPlayer?.color === Colors.BLACK ? Colors.WHITE : Colors.BLACK
+        }`
+      );
+      if (timer.current) {
+        clearInterval(timer.current);
+      }
+    }
+  }, [blackTime, whiteTime]);
 
   const decrementBlackTimer = () => {
     setBlackTime((prev) => prev - 1);

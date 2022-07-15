@@ -43,6 +43,50 @@
   justify-content: center;
 }
 
+.cell:nth-last-of-type(-n + 8)::before {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background: rgba(255, 196, 0, 0.267);
+  bottom: -20px;
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cell:nth-last-of-type(8)::before {
+  content: "A";
+}
+
+.cell:nth-last-of-type(7)::before {
+  content: "B";
+}
+
+.cell:nth-last-of-type(6)::before {
+  content: "C";
+}
+
+.cell:nth-last-of-type(5)::before {
+  content: "D";
+}
+
+.cell:nth-last-of-type(4)::before {
+  content: "E";
+}
+
+.cell:nth-last-of-type(3)::before {
+  content: "F";
+}
+
+.cell:nth-last-of-type(2)::before {
+  content: "G";
+}
+
+.cell:nth-last-of-type(1)::before {
+  content: "H";
+}
+
 .cell img {
   height: 48px;
   width: 48px;
