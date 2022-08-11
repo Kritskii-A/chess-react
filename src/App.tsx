@@ -35,7 +35,7 @@ function App() {
     <div className="app">
       <div className="block__left">
         <div className="current">
-          <h2>Текущий игрок: {currentPlayer?.color}</h2>
+          <h2>Current player: {currentPlayer?.color}</h2>
         </div>
         <Timer restart={restart} currentPlayer={currentPlayer} />
       </div>
@@ -46,8 +46,10 @@ function App() {
         swapPlayer={swapPlayer}
       />
       <div className="lost-figures">
-        <LostFigures title="Черные фигуры" figures={board.lostBlackFigures} />
-        <LostFigures title="Белые фигуры" figures={board.lostWhiteFigures} />
+        <h3>History:</h3>
+        <br />
+        <LostFigures title="Black figures" figures={board.lostBlackFigures} />
+        <LostFigures title="White figures" figures={board.lostWhiteFigures} />
       </div>
     </div>
   );

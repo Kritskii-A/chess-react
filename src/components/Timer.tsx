@@ -31,7 +31,7 @@ const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
   useEffect(() => {
     if (blackTime === 0 || whiteTime === 0) {
       alert(
-        `Время закончилось! Победили ${
+        `Time is over! Winner ${
           currentPlayer?.color === Colors.BLACK ? Colors.WHITE : Colors.BLACK
         }`
       );
@@ -57,8 +57,8 @@ const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
 
   return (
     <div className="timer">
-      <h2>Черные - {blackTime}</h2>
-      <h2>Белые - {whiteTime}</h2>
+      <h2>Black - {blackTime}</h2>
+      <h2>White - {whiteTime}</h2>
       <div>
         <button onClick={handleRestart}>Restart</button>
       </div>
